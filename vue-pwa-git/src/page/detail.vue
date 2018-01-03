@@ -1,13 +1,12 @@
 <template>
-    <header class="header">
-        <nav class="navigation"><img src="" alt=""></nav>
-        <title>title</title>
-    </header>
+  <div class="detail">
+    <h2>{{ msg }}</h2>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'hello',
+  name: 'detail',
   data () {
     return {
       msg: 'Welcome to Your Vue.js PWA'
@@ -16,10 +15,10 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-h1, h2 {
+h2 {
   font-weight: normal;
+  color: #35495E;
 }
 
 ul {

@@ -1,6 +1,6 @@
 # vue-pwa-git
 
-> github seach & list show
+> An progress web app by vue
 
 ## Build Setup
 
