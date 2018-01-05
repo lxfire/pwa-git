@@ -1,10 +1,9 @@
-const actions = (state) => {
-    switch (state.type) {
-        case '':
-            break
-        default:
-            break
-    }
+const actions = {
+  multi ({commit}) {
+    setTimeout(() => {
+      commit('multi')
+    }, 500)
+  }
 }
 
 export default actions

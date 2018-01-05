@@ -22,19 +22,17 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: Home,
-      children: [
-        {
-          path: '/detail/:id',
-          name: 'detail',
-          component: Detail
-        },
-        {
-          path: '/pwa',
-          name: 'pwa',
-          component: Pwa
-        }
-      ]
+      component: Home
+    },
+    {
+      path: '/detail/:id',
+      name: 'detail',
+      component: Detail
+    },
+    {
+      path: '/pwa',
+      name: 'pwa',
+      component: Pwa
     }
   ]
 })

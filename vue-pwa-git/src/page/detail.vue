@@ -7,9 +7,13 @@
 <script>
 export default {
   name: 'detail',
+  created () {
+    console.log(123, this.$router.history.current.params.id)
+  },
   data () {
+    const detailId = this.$router.history.current.params.id
     return {
-      msg: 'Welcome to Your Vue.js PWA'
+      msg: 'Welcome to Your Vue.js PWA Detail ' + detailId
     }
   }
 }
