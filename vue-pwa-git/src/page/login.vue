@@ -1,10 +1,11 @@
 <template>
-  <div class="login">
-    <button @click="login">Login</button>
+  <div>
+    <button class="login" @click="login">Login</button>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'login',
   methods: {
@@ -21,8 +22,9 @@ export default {
 button.login {
   width: 100px;
   height: 40px;
+  margin-top: 100px;
+  background: #2c3e;
   font-size: 16px;
-  background: #2c3e50;
   font-weight: normal;
   color: #35495E;
 }

@@ -4,7 +4,7 @@
 // file that will precache your site's local assets.
 // See https://github.com/facebookincubator/create-react-app/issues/2272#issuecomment-302832432
 
-self.addEventListener('install', () => self.skipWaiting());
+self.addEventListener('install', (e) => self.skipWaiting(e));
 
 self.addEventListener('activate', () => {
   self.clients.matchAll({ type: 'window' }).then(windowClients => {
@@ -15,3 +15,7 @@ self.addEventListener('activate', () => {
     }
   });
 });
+
+function skipWaiting (e) {
+  console.log('[ServiceWorker] Install')
+}

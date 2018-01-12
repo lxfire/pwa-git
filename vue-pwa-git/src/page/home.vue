@@ -11,18 +11,21 @@
     <input type="text" :value="count"/>
     <button @click="decrement"> - </button>
     <button @click="multi"> * </button>
+    <br/>
+    <button @click="homeload">{{time}}</button>
+    <button @click="log">consoleLog</button>
   </div>
 </template>
 
 <script>
 import { mapMutations, mapActions } from 'vuex'
+// import axios from 'axios'
 
 export default {
   name: 'home',
   data () {
     return {
       msg: 'Welcome to Your Vue.js PWA',
-
       todos: [
         { text: 'learn javascript', id: 0 },
         { text: 'learn React', id: 1 },
@@ -30,10 +33,16 @@ export default {
       ]
     }
   },
+  created () {
+    this.homeload()
+  },
   // 在mount之前对data中的值进行改变
   computed: {
     count () {
       return this.$store.state.count
+    },
+    time () {
+      return this.$store.state.homeData.query.created || 'qweewqqwe'
     }
   },
   // mount之后声明方法 改变
@@ -44,10 +53,12 @@ export default {
       })
     },
     joinPwa () {
-      console.log(this)
-      // this.$router.push({
-      //   path: '/pwa'
-      // })
+      this.$router.push({
+        path: '/pwa'
+      })
+    },
+    log () {
+      console.log('this time is ：' + this.time)
     },
     ...mapMutations({
       increment: {
@@ -59,7 +70,14 @@ export default {
         count: 1
       }
     }),
-    ...mapActions(['multi'])
+    ...mapActions(['multi']),
+    ...mapActions({
+      homeload: {
+        type: 'homeload',
+        method: 'GET',
+        url: 'https://query.yahooapis.com/v1/public/yql?format=json&q=select * from weather.forecast where woeid=0'
+      }
+    })
   }
 }
 </script>

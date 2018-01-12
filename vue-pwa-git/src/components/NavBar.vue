@@ -7,9 +7,8 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
+  name: 'navBar',
   data () {
     return {
       title: 'PWA by Vue.js'
@@ -21,19 +20,6 @@ export default {
     },
     search () {
       console.log('search message')
-    },
-    login () {
-      axios.get('https://github.com/login/oauth/authorize', {
-        client_id: '83ec5d5c239af8c7b51e',
-        redirect_uri: 'https://gitpwa.duapp.com',
-        state: 1
-      })
-        .then((response) => {
-          console.log(response)
-        })
-        .catch((error) => {
-          console.log(error)
-        })
     }
   }
 }

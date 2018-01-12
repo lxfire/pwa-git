@@ -1,10 +1,23 @@
 <template>
   <div class="detail">
     <h2>{{ msg }}</h2>
+    <table-view ref="tbv">
+      <table-view-cell
+        v-for="(item, index) of items"
+        :key="index"
+        :index="index"
+        :msg="item.msg"
+        :img="item.img"
+      ></table-view-cell>
+    </table-view>
   </div>
 </template>
 
 <script>
+import TableView from '../components/TableView'
+import TableViewCell from '../components/TableViewCell'
+// import getItems from '../utils/listData'
+
 export default {
   name: 'detail',
   created () {
@@ -13,8 +26,28 @@ export default {
   data () {
     const detailId = this.$router.history.current.params.id
     return {
-      msg: 'Welcome to Your Vue.js PWA Detail ' + detailId
+      msg: 'Welcome to Your Vue.js PWA Detail ' + detailId,
+      items: [
+        {
+          msg: '123adadasd',
+          img: ''
+        },
+        {
+          msg: 'qwasdxzxeqwe',
+          img: ''
+        },
+        {
+          msg: 'qweasdasqwe',
+          img: ''
+        }
+      ]
     }
+  },
+  computed: {
+  },
+  components: {
+    TableView,
+    TableViewCell
   }
 }
 </script>
@@ -32,7 +65,7 @@ ul {
 
 li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0;
 }
 
 a {

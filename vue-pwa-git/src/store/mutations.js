@@ -1,6 +1,7 @@
 export const INCREMENT = 'increment'
 export const DECREMENT = 'decrement'
 export const MULTI = 'multi'
+export const HOMELOAD = 'homeload'
 
 export default {
   [INCREMENT] (state, payload) {
@@ -11,5 +12,8 @@ export default {
   },
   [MULTI] (state) {
     state.count *= state.count
+  },
+  [HOMELOAD] (state, payload) {
+    state.homeData = payload
   }
 }

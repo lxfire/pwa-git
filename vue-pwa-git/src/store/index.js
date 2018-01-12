@@ -8,7 +8,12 @@ import mutations from './mutations'
 Vue.use(Vuex)
 // 初始值
 const state = {
-  count: 0
+  count: 0,
+  homeData: {
+    query: {
+      created: ''
+    }
+  }
 }
 
 const store = new Vuex.Store({
